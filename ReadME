@@ -1,0 +1,82 @@
+This project contains a Selenium WebDriver test script for automating interactions with the FitPeo Revenue Calculator page. The script performs the following tasks:
+
+- Navigates to the FitPeo homepage.
+- Accesses the Revenue Calculator page.
+- Interacts with a slider and text field.
+- Verifies the values of the slider and text field.
+- Selects CPT codes checkboxes.
+- Validates the total recurring reimbursement amount.
+
+*Prerequisites*
+To run this test, ensure you have the following installed:
+
+- Java Development Kit (JDK): Java 8 or later.
+- Apache Maven: For managing dependencies and running the test.
+- Google Chrome: Make sure you have the latest version of Google Chrome installed.
+- ChromeDriver: Selenium WebDriver will handle this automatically if you use WebDriverManager.
+
+*Project Setup*
+
+1. Clone the Repository
+bash
+Copy code
+git clone https://github.com/your-repository-url.git
+cd your-repository-directory
+2. Add Dependencies
+Ensure your pom.xml file includes the necessary dependencies. Here is an example pom.xml snippet:
+
+*xml*
+<dependencies>
+    <!-- Selenium WebDriver -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.10.0</version>
+    </dependency>
+
+    <!-- WebDriverManager -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.7.1</version>
+    </dependency>
+
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.7.0</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+3. Install Dependencies
+Run the following Maven command to install the dependencies:
+
+*bash*
+Copy code
+mvn install
+Running the Test
+1. Compile and Run
+Use Maven to compile and run the test:
+
+*bash*
+Copy code
+mvn test
+2. Test Output
+The test results will be displayed in the terminal. Test reports will be generated under the target/surefire-reports directory.
+
+*Code Explanation*
+FitPeoAutomation.java: Contains the Selenium WebDriver test script.
+
+Setup (@BeforeClass): Initializes WebDriver and WebDriverWait.
+Test Method (@Test): Executes the steps to interact with the FitPeo page and verify results.
+Teardown (@AfterClass): Closes the browser after tests are complete.
+Troubleshooting
+CDP Warning: If you encounter a CDP warning, ensure you have the correct version of the selenium-devtools dependency for your browser version.
+Element Not Found: Verify that the XPath or CSS selectors used are correct and match the current HTML structure of the FitPeo site.
+Contributing
+If you have suggestions or improvements, please create a pull request or open an issue on the GitHub repository.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
